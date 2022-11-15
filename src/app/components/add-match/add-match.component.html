@@ -1,0 +1,65 @@
+<style>
+  ::placeholder {
+    color: aliceblue;
+  }
+
+  .form-control {
+    text-align: center;
+  }
+</style>
+<div class="hero overlay" style="background-image: url('assets/images/stadium.jpg');">
+  <section class="container site-section">
+    <div class="container site-section">
+      <div class="row">
+        <div class="col-6 title-section">
+          <h1 class="heading" style="font-size: 50px;">Add Match</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="team-details w-100 text-center">
+            <form #addMatchForm="ngForm" (ngSubmit)="addMatch()">
+              <div class="widget-body mb-3">
+                <div class="widget-vs">
+                  <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                    <div class="team-1 text-center">
+                      <img src="assets/images/logo_1.png" alt="Image">
+                      <h3>Team One</h3>
+                    </div>
+                    <div>
+                      <span class="vs"><span>VS</span></span>
+                    </div>
+                    <div class="team-2 text-center">
+                      <img src="assets/images/logo_2.png" alt="Image">
+                      <h3>Team Two</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="teamOne" placeholder="Team One *"
+                    [(ngModel)]="match.teamOne" [ngModelOptions]="{standalone : true}">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="teamTwo" placeholder="Team Two *"
+                    [(ngModel)]="match.teamTwo" [ngModelOptions]="{standalone : true}">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="number" class="form-control" id="scoreOne" placeholder="Score One *"
+                    [(ngModel)]="match.scoreOne" [ngModelOptions]="{standalone : true}">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="number" class="form-control" id="scoreTwo" placeholder="Score Two *"
+                    [(ngModel)]="match.scoreTwo" [ngModelOptions]="{standalone : true}">
+                </div>
+              </div>
+              <div class="regerv_btn">
+                <button class="btn btn-primary py-3 px-4 mr-3">Add Match</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
